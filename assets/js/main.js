@@ -61,7 +61,17 @@
   /**
    * Preloader
    */
-  
+  window.addEventListener('load', () => {
+  const p = document.querySelector('#preloader');
+  if (p) {
+    setTimeout(() => {
+      p.style.transition = 'opacity 0.5s';
+      p.style.opacity = '0';
+      setTimeout(() => p.remove(), 500);
+    }, 1000);
+  }
+});
+
   /**
    * Scroll top button
    */
